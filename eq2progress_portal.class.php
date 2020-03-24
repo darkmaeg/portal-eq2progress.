@@ -17,6 +17,9 @@
  * Modified Version of Hoofy's mybars progression module
  *
  * This version populates the guild raid achievements from the Data Api
+ * V6.5 Added 6 BoL Challenge Raid mobs
+ * V6.4 Updated Blood of Luclin Challenge Mode mobs
+ * V6.3 Added Blood of Luclin
  * V6.2 Added Fabled Kael Drakkel
  * V6.1 Daybreak changed Xegony and Fennin Ro achieve ID
  * V6.0 Updated Castle Mischief - Daybreak changed all ID #'s
@@ -69,7 +72,7 @@ class eq2progress_portal extends portal_generic {
 	protected static $path		= 'eq2progress';
 	protected static $data		= array(
 		'name'			=> 'EQ2 Progression',
-		'version'		=> '6.2',
+		'version'		=> '6.5',
 		'author'		=> 'Darkmaeg',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Everquest 2 Progression',
@@ -84,7 +87,7 @@ class eq2progress_portal extends portal_generic {
 	);
 	protected static $apiLevel = 20;
 	public function get_settings($state) {
-			$settings = array(
+		$settings = array(
 			'eq2progress_contested'	=> array(
 				'name'		=> 'eq2progress_contested',
 				'language'	=> 'eq2progress_contested',
@@ -404,9 +407,45 @@ class eq2progress_portal extends portal_generic {
 				'name'		=> 'eq2progress_ftrz',
 				'language'	=> 'eq2progress_ftrz',
 				'type'	=> 'radio',
-			),'eq2progress_fts'	=> array(
+			),
+			'eq2progress_fts'	=> array(
 				'name'		=> 'eq2progress_fts',
 				'language'	=> 'eq2progress_fts',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl1'	=> array(
+				'name'		=> 'eq2progress_bl1',
+				'language'	=> 'eq2progress_bl1',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl2'	=> array(
+				'name'		=> 'eq2progress_bl2',
+				'language'	=> 'eq2progress_bl2',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl3'	=> array(
+				'name'		=> 'eq2progress_bl3',
+				'language'	=> 'eq2progress_bl3',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl4'	=> array(
+				'name'		=> 'eq2progress_bl4',
+				'language'	=> 'eq2progress_bl4',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl5'	=> array(
+				'name'		=> 'eq2progress_bl5',
+				'language'	=> 'eq2progress_bl5',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl6'	=> array(
+				'name'		=> 'eq2progress_bl6',
+				'language'	=> 'eq2progress_bl6',
+				'type'	=> 'radio',
+			),
+			'eq2progress_bl7'	=> array(
+				'name'		=> 'eq2progress_bl7',
+				'language'	=> 'eq2progress_bl7',
 				'type'	=> 'radio',
 			),
 			'eq2progress_date'	=> array(
@@ -453,16 +492,16 @@ class eq2progress_portal extends portal_generic {
 		if (($this->config('eq2progress_tot4')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone30 = TRUE); }
 		if (($this->config('eq2progress_siege')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone31 = TRUE); }
 		if (($this->config('eq2progress_fcazic')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone32 = TRUE); }
-		if (($this->config('eq2progress_ffd')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone33 = TRUE); }
-		if (($this->config('eq2progress_ka1')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone34 = TRUE); }
-		if (($this->config('eq2progress_ka2')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone35 = TRUE); }
-		if (($this->config('eq2progress_ka3')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone36 = TRUE); }
-		if (($this->config('eq2progress_ka4')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone37 = TRUE); }
-		if (($this->config('eq2progress_ka5')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone38 = TRUE); }
-		if (($this->config('eq2progress_ka6')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone39 = TRUE); }
-		if (($this->config('eq2progress_ka7')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone40 = TRUE); }
-		if (($this->config('eq2progress_ka8')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone41 = TRUE); }
-		if (($this->config('eq2progress_ka9')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone42 = TRUE); }
+		if (($this->config('eq2progress_ffd')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone33 = TRUE); }
+		if (($this->config('eq2progress_ka1')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone34 = TRUE); }
+		if (($this->config('eq2progress_ka2')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone35 = TRUE); }
+		if (($this->config('eq2progress_ka3')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone36 = TRUE); }
+		if (($this->config('eq2progress_ka4')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone37 = TRUE); }
+		if (($this->config('eq2progress_ka5')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone38 = TRUE); }
+		if (($this->config('eq2progress_ka6')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone39 = TRUE); }
+		if (($this->config('eq2progress_ka7')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone40 = TRUE); }
+		if (($this->config('eq2progress_ka8')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone41 = TRUE); }
+		if (($this->config('eq2progress_ka9')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone42 = TRUE); }
 		if (($this->config('eq2progress_ka1a')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone43 = TRUE); }
 		if (($this->config('eq2progress_ka1b')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone44 = TRUE); }
 		if (($this->config('eq2progress_pop1')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone45 = TRUE); }
@@ -485,21 +524,29 @@ class eq2progress_portal extends portal_generic {
 		if (($this->config('eq2progress_fkd')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone62 = TRUE); }
 		if (($this->config('eq2progress_ftrz')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone63 = TRUE); }
 		if (($this->config('eq2progress_fts')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone64 = TRUE); }
+		if (($this->config('eq2progress_bl1')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone65 = TRUE); }
+		if (($this->config('eq2progress_bl2')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone66 = TRUE); }
+		if (($this->config('eq2progress_bl3')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone67 = TRUE); }
+		if (($this->config('eq2progress_bl4')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone68 = TRUE); }
+		if (($this->config('eq2progress_bl5')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone69 = TRUE); }
+		if (($this->config('eq2progress_bl6')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone70 = TRUE); }
+		if (($this->config('eq2progress_bl7')) == TRUE )    		{ ($maxbars = $maxbars + 1); ($zone71 = TRUE); }
 		$arena = 0; $contested = 0; $harrows = 0; $sleeper = 0; $altar = 0; $pow = 0; $dread = 0; $sirens = 0; $djinn= 0;
 		$tov = 0; $as = 0; $tovc = 0; $king = 0; $dreadscale = 0; $deathtoll = 0; $agesend = 0; $malice1 = 0; $malice2 = 0; 
 		$malice3 = 0; $malice4 = 0; $malice5 = 0; $malice6 = 0; $aoma = 0; $fsd = 0; $eof = 0; $totc = 0; $tot1 = 0; $ffd = 0;
 		$tot2 = 0; $tot3 = 0; $tot4 = 0; $siege = 0; $fcazic = 0; $ka1 = 0; $ka2 = 0; $ka3 = 0; $ka4 = 0; $ka5 = 0; $ka6 = 0; $ka7 = 0;
 		$ka8 = 0; $ka9 = 0; $ka1a = 0; $ka1b = 0; $pop1 = 0; $pop2 = 0; $pop3 = 0; $pop4 = 0; $pop5 = 0; $popsoh = 0; $ykesha = 0; 
 		$chaosd1 = 0; $chaosd2 = 0; $chaosd3 = 0; $chaosd4 = 0; $chaosd5 = 0; $chaosd6 = 0; $chaosd7 = 0; $chaosd8 = 0; $chaosd9 = 0;
-		$mischf = 0; $fkd = 0; $ftrz = 0; $fts = 0;
-		$arenamax = 10; $contmax = 9; $harrowmax = 12; $sleepermax = 12; $altarmax = 6; $powmax = 7; $dreadmax = 3; $sirenmax = 9; $djinnmax = 2; $eofmax = 8; 
-		$tovmax = 15; $asmax = 11; $tovcmax = 2; $kingmax = 3; $dreadscalemax = 8; $deathtollmax = 5; $agesendmax = 4; 
-		$malice1max = 4; $malice2max = 3; $malice3max = 3; $malice4max = 5; $malice5max = 5; $malice6max = 3; 
-		$aomamax = 5; $fsdmax = 10; $totcmax = 1; $tot1max = 9; $tot2max = 8; $tot3max = 5; $tot4max = 8; $siegemax = 6; $fcazicmax = 1; $ffdmax = 3; 
-		$ka1max = 6; $ka2max = 5; $ka3max = 5; $ka4max = 5; $ka5max = 5; $ka6max = 4; $ka7max = 1;
-		$ka8max = 5; $ka9max = 5; $ka1amax = 5; $ka1bmax = 5; $pop1max = 13; $pop2max = 11; $pop3max = 11; $pop4max = 11; $pop5max = 3; $popsohmax = 25; $ykeshamax = 5; 
-		$chaosd1max = 12; $chaosd2max = 12; $chaosd3max = 14; $chaosd4max = 2; $chaosd5max = 2; $chaosd6max = 2; $chaosd7max = 4; $chaosd8max = 8; $chaosd9max = 1; 
-		$mischfmax = 5; $fkdmax = 1; $ftrzmax = 5; $ftsmax = 5;
+		$mischf = 0; $fkd = 0; $ftrz = 0; $fts = 0; $bl1 = 0; $bl2 = 0; $bl3 = 0; $bl4 = 0; $bl5 = 0; $bl6 = 0; $bl7 = 0;
+		$arenamax = 10; $contmax = 9; $harrowmax = 12; $sleepermax = 12; $altarmax = 6; $powmax = 7; $dreadmax = 3; $sirenmax = 9; 
+		$djinnmax = 2; $eofmax = 8; $tovmax = 15; $asmax = 11; $tovcmax = 2; $kingmax = 3; $dreadscalemax = 8; $deathtollmax = 5; 
+		$agesendmax = 4; $malice1max = 4; $malice2max = 3; $malice3max = 3; $malice4max = 5; $malice5max = 5; $malice6max = 3; 
+		$aomamax = 5; $fsdmax = 10; $totcmax = 1; $tot1max = 9; $tot2max = 8; $tot3max = 5; $tot4max = 8; $siegemax = 6; $fcazicmax = 1; 
+		$ffdmax = 3; $ka1max = 6; $ka2max = 5; $ka3max = 5; $ka4max = 5; $ka5max = 5; $ka6max = 4; $ka7max = 1; $ka8max = 5; $ka9max = 5; 
+		$ka1amax = 5; $ka1bmax = 5; $pop1max = 13; $pop2max = 11; $pop3max = 11; $pop4max = 11; $pop5max = 3; $popsohmax = 25; $ykeshamax = 5; 
+		$chaosd1max = 12; $chaosd2max = 12; $chaosd3max = 14; $chaosd4max = 2; $chaosd5max = 2; $chaosd6max = 2; $chaosd7max = 4; 
+		$chaosd8max = 8; $chaosd9max = 1; $mischfmax = 5; $fkdmax = 1; $ftrzmax = 5; $ftsmax = 5; $bl1max = 8; $bl2max = 8; $bl3max = 8;
+		$bl4max = 14; $bl5max = 8; $bl6max = 8; $bl7max = 1;
 		$this->game->new_object('eq2_daybreak', 'daybreak', array($this->config->get('uc_server_loc'), $this->config->get('uc_data_lang')));
 		if(!is_object($this->game->obj['daybreak'])) return "";
 		$guilddata = $this->game->obj['daybreak']->guildinfo($this->config->get('guildtag'), $this->config->get('servername'), false);
@@ -613,7 +660,9 @@ class eq2progress_portal extends portal_generic {
 		$aoma5=$spacer.'<font color="white">The Tribunal</font><br>';
 		$fsdval=$this->user->lang('eq2progress_f_eq2progress_fsdistillery');
 		$fsd1=$spacer.'<font color="white">Baz the Illusionist</font><br>'; $fsd2=$spacer.'<font color="white">Danacio the Witchdoctor</font><br>'; $fsd3=$spacer.'<font color="white">Brunhildre the Wench</font><br>'; 
-		$fsd4=$spacer.'<font color="white">Pirate Shaman Snaggletooth</font><br>'; $fsd5=$spacer.'<font color="white">Kildiun the Drunkard</font><br>'; $fsd6=$spacer.'<font color="white">Charanda</font><br>'; $fsd7=$spacer.'<font color="white">Bull McCleran</font><br>'; $fsd8=$spacer.'<font color="white">Swabber Rotgut</font><br>'; $fsd9=$spacer.'<font color="white">Captain Mergin</font><br>'; $fsd10=$spacer.'<font color="white">Brutas the Imbiber</font><br>'; 
+		$fsd4=$spacer.'<font color="white">Pirate Shaman Snaggletooth</font><br>'; $fsd5=$spacer.'<font color="white">Kildiun the Drunkard</font><br>'; $fsd6=$spacer.'<font color="white">Charanda</font><br>'; 
+		$fsd7=$spacer.'<font color="white">Bull McCleran</font><br>'; $fsd8=$spacer.'<font color="white">Swabber Rotgut</font><br>'; $fsd9=$spacer.'<font color="white">Captain Mergin</font><br>'; 
+		$fsd10=$spacer.'<font color="white">Brutas the Imbiber</font><br>'; 
 		$eofval=$this->user->lang('eq2progress_f_eq2progress_freethinkers');
 		$eof1=$spacer.'<font color="white">Malkonis D\'Morte (Challenge)</font><br>'; $eof2=$spacer.'<font color="white">Treyloth D\'Kulvith (Challenge)</font><br>'; 
 		$eof3=$spacer.'<font color="white">Othysis Muravian (Challenge)</font><br>'; $eof4=$spacer.'<font color="white">Zylphax the Shredder (Challenge)</font><br>'; 
@@ -636,8 +685,10 @@ class eq2progress_portal extends portal_generic {
 		$tot33=$spacer.'<font color="white">Crohp the Mighty</font><br>'; $tot34=$spacer.'<font color="white">King Lockt</font><br>'; 
 		$tot35=$spacer.'<font color="white">Wedge Tinderton</font><br>';
 		$tot4val=$this->user->lang('eq2progress_f_eq2progress_tot4');
-		$tot41=$spacer.'<font color="white">Kraletus</font><br>'; $tot42=$spacer.'<font color="white">Ynonngozzz\'Koolbh</font><br>'; $tot43=$spacer.'<font color="white">The Polliwog</font><br>'; $tot44=$spacer.'<font color="white">Sath\'Oprusk</font><br>'; 
-		$tot45=$spacer.'<font color="white">The Psionists</font><br>'; $tot46=$spacer.'<font color="white">Ojuti the Vile</font><br>'; $tot47=$spacer.'<font color="white">Karith\'Ta</font><br>'; $tot48=$spacer.'<font color="white">Charrid the Mindwarper</font><br>';
+		$tot41=$spacer.'<font color="white">Kraletus</font><br>'; $tot42=$spacer.'<font color="white">Ynonngozzz\'Koolbh</font><br>'; $tot43=$spacer.'<font color="white">The Polliwog</font><br>'; 
+		$tot44=$spacer.'<font color="white">Sath\'Oprusk</font><br>'; 
+		$tot45=$spacer.'<font color="white">The Psionists</font><br>'; $tot46=$spacer.'<font color="white">Ojuti the Vile</font><br>'; $tot47=$spacer.'<font color="white">Karith\'Ta</font><br>'; 
+		$tot48=$spacer.'<font color="white">Charrid the Mindwarper</font><br>';
 		$siegeval=$this->user->lang('eq2progress_f_eq2progress_siege'); 
 		$siege1=$spacer.'<font color="white">The Weapon of War</font><br>'; $siege2=$spacer.'<font color="white">Sanctifier Goortuk Challenge Mode</font><br>'; 
 		$siege3=$spacer.'<font color="white">Sanctifier Goortuk</font><br>'; $siege4=$spacer.'<font color="white">Durtung the Arm of War</font><br>'; 
@@ -823,6 +874,70 @@ class eq2progress_portal extends portal_generic {
 		$ftrz3=$spacer.'<font color="white">Supreme Imperium Valdemar</font><br>';
 		$ftrz4=$spacer.'<font color="white">Prime-Curator Undr</font><br>';
 		$ftrz5=$spacer.'<font color="white">Prime-Cornicen Munderrad</font><br>';
+		$bl1val=$this->user->lang('eq2progress_f_eq2progress_bl1');
+		$bl11=$spacer.'<font color="white">Berenz, Blades of Legend</font><br>';
+		$bl12=$spacer.'<font color="white">Roris Lacea</font><br>';
+		$bl13=$spacer.'<font color="white">Uget, Ugep, and Uger</font><br>';
+		$bl14=$spacer.'<font color="white">Scrawl, Tremor of the Deep</font><br>';
+		$bl15=$spacer.'<font color="white">Berenz, the Shattered Blades</font><br>';
+		$bl16=$spacer.'<font color="white">Roris Lacea</font><br>';
+		$bl17=$spacer.'<font color="white">Scrawl</font><br>';
+		$bl18=$spacer.'<font color="white">Tegu, Pegu, and Regu</font><br>';
+		$bl2val=$this->user->lang('eq2progress_f_eq2progress_bl2');
+		$bl21=$spacer.'<font color="white">Lord Commander Seru</font><br>';
+		$bl22=$spacer.'<font color="white">Luminary Percontorius Felvin</font><br>';
+		$bl23=$spacer.'<font color="white">Shadow Assassin</font><br>';
+		$bl24=$spacer.'<font color="white">Shadow Summoner</font><br>';
+		$bl25=$spacer.'<font color="white">Lord Triskian Seru</font><br>';
+		$bl26=$spacer.'<font color="white">Luminary Hertu Asundri</font><br>';
+		$bl27=$spacer.'<font color="white">Luminary Percontorius Felvin</font><br>';
+		$bl28=$spacer.'<font color="white">Luminary Cohortis Emon</font><br>';
+		$bl3val=$this->user->lang('eq2progress_f_eq2progress_bl3');
+		$bl31=$spacer.'<font color="white">Eom Va Liako Vess</font><br>';
+		$bl32=$spacer.'<font color="white">Stonegrabber Colossus</font><br>';
+		$bl33=$spacer.'<font color="white">Dark Xuis Lord</font><br>';
+		$bl34=$spacer.'<font color="white">Sambata Mutant</font><br>';
+		$bl35=$spacer.'<font color="white">Pli Ca Liako Vess</font><br>';
+		$bl36=$spacer.'<font color="white">Stonegrabber Colossus</font><br>';
+		$bl37=$spacer.'<font color="white">Sambata Champion</font><br>';
+		$bl38=$spacer.'<font color="white">Xi Xia Xius</font><br>';
+		$bl4val=$this->user->lang('eq2progress_f_eq2progress_bl4');
+		$bl41=$spacer.'<font color="white">The Undying</font><br>';
+		$bl42=$spacer.'<font color="white">Mindless Blood of Ssraeshza</font><br>';
+		$bl43=$spacer.'<font color="white">Kua, Keeper of Shadows</font><br>';
+		$bl44=$spacer.'<font color="white">Undead Shissar Lords</font><br>';
+		$bl45=$spacer.'<font color="white">Remnant Ferahhal</font><br>';
+		$bl46=$spacer.'<font color="white">Ssyre, Furnace of Wrath</font><br>';
+		$bl47=$spacer.'<font color="white">The Timeless One</font><br>';
+		$bl48=$spacer.'<font color="white">Vyzh\'dra the Unleashed</font><br>';
+		$bl49=$spacer.'<font color="white">Deactivated Blood of Ssraeshza</font><br>';
+		$bl410=$spacer.'<font color="white">Kua, Watcher of Wanes</font><br>';
+		$bl411=$spacer.'<font color="white">R\'thessil and Zeltheen</font><br>';
+		$bl412=$spacer.'<font color="white">Remnant Ferahhal</font><br>';
+		$bl413=$spacer.'<font color="white">Ssyre, the Fading Fire</font><br>';
+		$bl414=$spacer.'<font color="white">Timeless Golem</font><br>';
+		$bl5val=$this->user->lang('eq2progress_f_eq2progress_bl5');
+		$bl51=$spacer.'<font color="white">Enraged Shik\'nar Imperiatrix</font><br>';
+		$bl52=$spacer.'<font color="white">Praetorian K\'Tikrn</font><br>';
+		$bl53=$spacer.'<font color="white">Enraged Rockhopper Pouncer</font><br>';
+		$bl54=$spacer.'<font color="white">Thought Horror Abberation</font><br>';
+		$bl55=$spacer.'<font color="white">Shik\'Nar Imperiatrix</font><br>';
+		$bl56=$spacer.'<font color="white">Praetorian K\'Tikrn</font><br>';
+		$bl57=$spacer.'<font color="white">Rockhopper Pouncer</font><br>';
+		$bl58=$spacer.'<font color="white">Thought Horror Overfiend</font><br>';
+		$bl6val=$this->user->lang('eq2progress_f_eq2progress_bl6');
+		$bl61=$spacer.'<font color="white">Echo of Ancient Knowledge</font><br>';
+		$bl62=$spacer.'<font color="white">Portabellius Shrieker</font><br>';
+		$bl63=$spacer.'<font color="white">Vestgal Poltergeist</font><br>';
+		$bl64=$spacer.'<font color="white">Nhekrin, Dual Master</font><br>';
+		$bl65=$spacer.'<font color="white">Nhekrin</font><br>';
+		$bl66=$spacer.'<font color="white">Palomidiar Allakhaji</font><br>';
+		$bl67=$spacer.'<font color="white">Portabellius Shrieker</font><br>';
+		$bl68=$spacer.'<font color="white">Vestigal Broker</font><br>';
+		$bl7val=$this->user->lang('eq2progress_f_eq2progress_bl7');
+		$bl71=$spacer.'<font color="white">Rhyll, Bringer of Shadows</font><br>';
+		$bl72=$spacer.'<font color="white">Kaas Thox Xi Aten Ha Ra</font><br>';
+		$bl73=$spacer.'<font color="white">The Spire Lord</font><br>';
 		//Check which have been killed
 		$killslist = $this->pdc->get('portal.module.eq2progress.'.$this->root_path);
 				if (!$killslist){
@@ -830,7 +945,7 @@ class eq2progress_portal extends portal_generic {
 		$kdate = "";
 		if (($this->config('eq2progress_date')) == TRUE ) 		
 		{ ($stamp = date('m/d/Y', $achieve[$a]['completedtimestamp'])); 
-     		($kdate = '<font color="white">'.$stamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>'); }
+        	($kdate = '<font color="white">'.$stamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>'); }
 		$acid = $achieve[$a]['id'];
 		//Dreadcutter
 		if ($acid == '3473349988') {$dread = $dread + 1; $d1 =$kdate.'<font color="808080"><strike>Omugra, Thazurus, & Vuzalg</strike></font><br>';} 
@@ -1296,7 +1411,7 @@ class eq2progress_portal extends portal_generic {
 		if ($acid == '3943939570') {$fkd = $fkd + 1; $fkd1 =$kdate.'<font color="808080"><strike>Soren the Vindicator</strike></font><br>';}
 		//Fabled Throne of Storms
 		if ($acid == '1944182947') {$fts = $fts + 1; $fts1 =$kdate.'<font color="808080"><strike>King Tormax</strike></font><br>';}
-		if ($acid == '290977819')  {$fts = $fts + 1; $fts2 =$kdate.'<font color="808080"><strike>Imperator Kolskeggrr</strike></font><br>';}
+		if ($acid == '2909778192')  {$fts = $fts + 1; $fts2 =$kdate.'<font color="808080"><strike>Imperator Kolskeggrr</strike></font><br>';}
 		if ($acid == '2396728051') {$fts = $fts + 1; $fts3 =$kdate.'<font color="808080"><strike>Legatus Prime Mikill</strike></font><br>';}
 		if ($acid == '1361893972') {$fts = $fts + 1; $fts4 =$kdate.'<font color="808080"><strike>Primus Pilus Gunnr</strike></font><br>';}
 		if ($acid == '3421737593') {$fts = $fts + 1; $fts5 =$kdate.'<font color="808080"><strike>Arch-Magistor Modrfrost</strike></font><br>';}
@@ -1305,7 +1420,71 @@ class eq2progress_portal extends portal_generic {
 		if ($acid == '2753221244') {$ftrz = $ftrz + 1; $ftrz2 =$kdate.'<font color="808080"><strike>Proto-Exarch Finnrdag</strike></font><br>';}
 		if ($acid == '3160586682') {$ftrz = $ftrz + 1; $ftrz3 =$kdate.'<font color="808080"><strike>Supreme Imperium Valdemar</strike></font><br>';}
 		if ($acid == '3632078227') {$ftrz = $ftrz + 1; $ftrz4 =$kdate.'<font color="808080"><strike>Prime-Curator Undr</strike></font><br>';}
-		if ($acid == '1481435192')  {$ftrz = $ftrz + 1; $ftrz5 =$kdate.'<font color="808080"><strike>Prime-Cornicen Munderrad</strike></font><br>';}
+		if ($acid == '1481435192') {$ftrz = $ftrz + 1; $ftrz5 =$kdate.'<font color="808080"><strike>Prime-Cornicen Munderrad</strike></font><br>';}
+		//Wracklands: The Crimson Barrens
+		if ($acid == '2900517186') {$bl1 = $bl1 + 1; $bl11 =$kdate.'<font color="808080"><strike>Berenz, Blades of Legend</strike></font><br>';}
+		if ($acid == '1252795979') {$bl1 = $bl1 + 1; $bl12 =$kdate.'<font color="808080"><strike>Roris Lacea</strike></font><br>';}
+		if ($acid == '1078090849') {$bl1 = $bl1 + 1; $bl13 =$kdate.'<font color="808080"><strike>Uget, Ugep, and Uger</strike></font><br>';}
+		if ($acid == '1331687895') {$bl1 = $bl1 + 1; $bl14 =$kdate.'<font color="808080"><strike>Scrawl, Tremor of the Deep</strike></font><br>';}
+		if ($acid == '4191662472') {$bl1 = $bl1 + 1; $bl15 =$kdate.'<font color="808080"><strike>Berenz, the Shattered Blades</strike></font><br>';}
+		if ($acid == '2052768764') {$bl1 = $bl1 + 1; $bl16 =$kdate.'<font color="808080"><strike>Roris Lacea</strike></font><br>';}
+		if ($acid == '443162909')  {$bl1 = $bl1 + 1; $bl17 =$kdate.'<font color="808080"><strike>Scrawl</strike></font><br>';}
+		if ($acid == '56099470')   {$bl1 = $bl1 + 1; $bl18 =$kdate.'<font color="808080"><strike>Tegu, Pegu, and Regu</strike></font><br>';}
+		//Sanctus Seru: The Fading Arches
+		if ($acid == '2382954698') {$bl2 = $bl2 + 1; $bl21 =$kdate.'<font color="808080"><strike>Lord Commander Seru</strike></font><br>';}
+		if ($acid == '811823756')  {$bl2 = $bl2 + 1; $bl22 =$kdate.'<font color="808080"><strike>Luminary Percontorius Felvin</strike></font><br>';}
+		if ($acid == '2313115824') {$bl2 = $bl2 + 1; $bl23 =$kdate.'<font color="808080"><strike>Shadow Assassin</strike></font><br>';}
+		if ($acid == '2123103004') {$bl2 = $bl2 + 1; $bl24 =$kdate.'<font color="808080"><strike>Shadow Summoner</strike></font><br>';}
+		if ($acid == '4257121698') {$bl2 = $bl2 + 1; $bl25 =$kdate.'<font color="808080"><strike>Lord Triskian Seru</strike></font><br>';}
+		if ($acid == '353898651')  {$bl2 = $bl2 + 1; $bl26 =$kdate.'<font color="808080"><strike>Luminary Hertu Asundr</strike></font><br>';}
+		if ($acid == '9803579')    {$bl2 = $bl2 + 1; $bl27 =$kdate.'<font color="808080"><strike>Luminary Percontorius Felvin</strike></font><br>';}
+		if ($acid == '1359110509') {$bl2 = $bl2 + 1; $bl28 =$kdate.'<font color="808080"><strike>Luminary Cohortis Emon</strike></font><br>';}
+		//Aurelian Coast: The Emerging Eclipse
+		if ($acid == '2656150588') {$bl3 = $bl3 + 1; $bl31 =$kdate.'<font color="808080"><strike>Eom Va Liako Vess</strike></font><br>';}
+		if ($acid == '813827774')  {$bl3 = $bl3 + 1; $bl32 =$kdate.'<font color="808080"><strike>Stonegrabber Colossus</strike></font><br>';}
+		if ($acid == '1785802330') {$bl3 = $bl3 + 1; $bl33 =$kdate.'<font color="808080"><strike>Dark Xuis Lord</strike></font><br>';}
+		if ($acid == '1954156342') {$bl3 = $bl3 + 1; $bl34 =$kdate.'<font color="808080"><strike>Sambata Mutant</strike></font><br>';}
+		if ($acid == '4123152315') {$bl3 = $bl3 + 1; $bl35 =$kdate.'<font color="808080"><strike>Pli Ca Liako Vess</strike></font><br>';}
+		if ($acid == '1344258359') {$bl3 = $bl3 + 1; $bl36 =$kdate.'<font color="808080"><strike>Stonegrabber Colossus</strike></font><br>';}
+		if ($acid == '558882812')  {$bl3 = $bl3 + 1; $bl37 =$kdate.'<font color="808080"><strike>Sambata Champion</strike></font><br>';}
+		if ($acid == '2462801162') {$bl3 = $bl3 + 1; $bl38 =$kdate.'<font color="808080"><strike>Xi Xia Xius</strike></font><br>';}
+		//Ssraeshza's Hallowed Halls
+		if ($acid == '2312010021') {$bl4 = $bl4 + 1; $bl41 =$kdate.'<font color="808080"><strike>The Undying</strike></font><br>';}
+		if ($acid == '1673918203') {$bl4 = $bl4 + 1; $bl42 =$kdate.'<font color="808080"><strike>Mindless Blood of Ssraeshza</strike></font><br>';}
+		if ($acid == '3634712242') {$bl4 = $bl4 + 1; $bl43 =$kdate.'<font color="808080"><strike>Kua, Keeper of Shadows</strike></font><br>';}
+		if ($acid == '840746630')  {$bl4 = $bl4 + 1; $bl44 =$kdate.'<font color="808080"><strike>Undead Shissar Lords</strike></font><br>';}
+		if ($acid == '1114384144') {$bl4 = $bl4 + 1; $bl45 =$kdate.'<font color="808080"><strike>Remnant Ferahhal</strike></font><br>';}
+		if ($acid == '3308239218') {$bl4 = $bl4 + 1; $bl46 =$kdate.'<font color="808080"><strike>Ssyre, Furnace of Wrath</strike></font><br>';}
+		if ($acid == '3433700353') {$bl4 = $bl4 + 1; $bl47 =$kdate.'<font color="808080"><strike>The Timeless One</strike></font><br>';}
+		if ($acid == '1903430261') {$bl4 = $bl4 + 1; $bl48 =$kdate.'<font color="808080"><strike>Vyzh\'dra the Unleashed</strike></font><br>';}
+		if ($acid == '3017273683') {$bl4 = $bl4 + 1; $bl49 =$kdate.'<font color="808080"><strike>Deactivated Blood of Ssraeshza</strike></font><br>';}
+		if ($acid == '3466407540') {$bl4 = $bl4 + 1; $bl410 =$kdate.'<font color="808080"><strike>Kua, Watcher of Wanes</strike></font><br>';}
+		if ($acid == '1502555393') {$bl4 = $bl4 + 1; $bl411 =$kdate.'<font color="808080"><strike>R\'thessil and Zeltheen</strike></font><br>';}
+		if ($acid == '3134608448') {$bl4 = $bl4 + 1; $bl412 =$kdate.'<font color="808080"><strike>Remnant Ferahhal</strike></font><br>';}
+		if ($acid == '356368090')  {$bl4 = $bl4 + 1; $bl413 =$kdate.'<font color="808080"><strike>Ssyre, the Fading Fire</strike></font><br>';}
+		if ($acid == '481827753')  {$bl4 = $bl4 + 1; $bl414 =$kdate.'<font color="808080"><strike>Timeless Golem</strike></font><br>';}
+		//The Blinding: Twisted Vista
+		if ($acid == '982645176')  {$bl5 = $bl5 + 1; $bl51 =$kdate.'<font color="808080"><strike>Enraged Shik\'nar Imperiatrix</strike></font><br>';}
+		if ($acid == '3095596929') {$bl5 = $bl5 + 1; $bl52 =$kdate.'<font color="808080"><strike>Praetorian K\'Tikrn</strike></font><br>';}
+		if ($acid == '1997871848') {$bl5 = $bl5 + 1; $bl53 =$kdate.'<font color="808080"><strike>Enraged Rockhopper Pouncer</strike></font><br>';}
+		if ($acid == '3511320146') {$bl5 = $bl5 + 1; $bl54 =$kdate.'<font color="808080"><strike>Thought Horror Abberation</strike></font><br>';}
+		if ($acid == '2422581497') {$bl5 = $bl5 + 1; $bl55 =$kdate.'<font color="808080"><strike>Shik\'Nar Imperiatrix</strike></font><br>';}
+		if ($acid == '256227236')  {$bl5 = $bl5 + 1; $bl56 =$kdate.'<font color="808080"><strike>Praetorian K\'Tikrn</strike></font><br>';}
+		if ($acid == '3235095245') {$bl5 = $bl5 + 1; $bl57 =$kdate.'<font color="808080"><strike>Rockhopper Pouncer</strike></font><br>';}
+		if ($acid == '2863554604') {$bl5 = $bl5 + 1; $bl58 =$kdate.'<font color="808080"><strike>Thought Horror Overfiend</strike></font><br>';}
+		//Fordel Midst: Remembrance
+		if ($acid == '736669973')  {$bl6 = $bl6 + 1; $bl61 =$kdate.'<font color="808080"><strike>Echo of Ancient Knowledge</strike></font><br>';}
+		if ($acid == '2393281879') {$bl6 = $bl6 + 1; $bl62 =$kdate.'<font color="808080"><strike>Portabellius Shrieker</strike></font><br>';}
+		if ($acid == '3791489295') {$bl6 = $bl6 + 1; $bl63 =$kdate.'<font color="808080"><strike>Vestgal Poltergeist</strike></font><br>';}
+		if ($acid == '2631646661') {$bl6 = $bl6 + 1; $bl64 =$kdate.'<font color="808080"><strike>Nhekrin, Dual Master</strike></font><br>';}
+		if ($acid == '4016847021') {$bl6 = $bl6 + 1; $bl65 =$kdate.'<font color="808080"><strike>Nhekrin</strike></font><br>';}
+		if ($acid == '454972578')  {$bl6 = $bl6 + 1; $bl66 =$kdate.'<font color="808080"><strike>Palomidiar Allakhaji</strike></font><br>';}
+		if ($acid == '962604402')  {$bl6 = $bl6 + 1; $bl67 =$kdate.'<font color="808080"><strike>Portabellius Shrieker</strike></font><br>';}
+		if ($acid == '2322489992') {$bl6 = $bl6 + 1; $bl68 =$kdate.'<font color="808080"><strike>Vestigal Broker</strike></font><br>';}
+		//Lucan Constested
+		if ($acid == '987654321') {$bl7 = $bl7 + 1; $bl71 =$kdate.'<font color="808080"><strike>Rhyll, Bringer of Shadows</strike></font><br>';}
+		if ($acid == '987654321') {$bl7 = $bl7 + 1; $bl72 =$kdate.'<font color="808080"><strike>Kaas Thox Xi Aten Ha Ra</strike></font><br>';}
+		if ($acid == '987654321') {$bl7 = $bl7 + 1; $bl73 =$kdate.'<font color="808080"><strike>The Spire Lord</strike></font><br>';}		
 		}
 		//Flawless
 		for ($b=0; $b<=$ktot; $b++) {
@@ -1313,7 +1492,7 @@ class eq2progress_portal extends portal_generic {
 		$fkdate = "";
 		if (($this->config('eq2progress_date')) == TRUE ) 		
 		{ ($fstamp = date('m/d/Y', $achieve[$b]['completedtimestamp'])); 
- 	        ($fkdate = '<font color="white">'.$fstamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>');	}
+        	($fkdate = '<font color="white">'.$fstamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>');	}
 		if ($acid == '2600463831') {$ka11 =$fkdate.'<font color="808080"><strike>Shanaira the Prestigious</strike></font> FLAWLESS<br>';}
 		if ($acid == '4134444588') {$ka12 =$fkdate.'<font color="808080"><strike>Amalgams of Order and Chaos</strike></font> FLAWLESS<br>';}
 		if ($acid == '4043528757') {$ka13 =$fkdate.'<font color="808080"><strike>Shanaira the Powermonger</strike></font> FLAWLESS<br>';}
@@ -1471,6 +1650,64 @@ class eq2progress_portal extends portal_generic {
 		if ($acid == '3296104459') {$chaosd87 =$fkdate.'<font color="808080"><strike>Ofossaa the Seahag</strike></font> FLAWLESS<br>';}
 		if ($acid == '3987534314') {$chaosd88 =$fkdate.'<font color="808080"><strike>Hydrotha</strike></font> FLAWLESS<br>';}
 		if ($acid == '662346084')  {$chaosd91 =$fkdate.'<font color="808080"><strike>Coirnav</strike></font> FLAWLESS<br>';}
+		//$bl11 = $fkdate.substr_replace($bl11 ,"", -4).' FLAWLESS<br>';}
+		if ($acid == '1871841867') {$bl11 =$fkdate.'<font color="808080"><strike>Berenz, Blades of Legend</strike></font> FLAWLESS<br>';}
+		if ($acid == '910790326')  {$bl12 =$fkdate.'<font color="808080"><strike>Roric Lacea</strike></font> FLAWLESS<br>';}
+		if ($acid == '2030376623') {$bl13 =$fkdate.'<font color="808080"><strike>Uget, Ugep, and Uger</strike></font> FLAWLESS<br>';}
+		if ($acid == '2351930078') {$bl14 =$fkdate.'<font color="808080"><strike>Scrawl, Tremor of the Deep</strike></font> FLAWLESS<br>';}
+		if ($acid == '1493566810') {$bl15 =$fkdate.'<font color="808080"><strike>Berenz, the Shattered Blades</strike></font> FLAWLESS<br>';}
+		if ($acid == '2701945116') {$bl16 =$fkdate.'<font color="808080"><strike>Roris Lacea</strike></font> FLAWLESS<br>';}
+		if ($acid == '3132855759') {$bl17 =$fkdate.'<font color="808080"><strike>Scrawl</strike></font> FLAWLESS<br>';}
+		if ($acid == '3996857508') {$bl18 =$fkdate.'<font color="808080"><strike>Tegu, Pegu, and Regu</strike></font> FLAWLESS<br>';}
+		if ($acid == '3404729385') {$bl21 =$fkdate.'<font color="808080"><strike>Lord Commander Seru</strike></font> FLAWLESS<br>';}
+		if ($acid == '1283906161') {$bl22 =$fkdate.'<font color="808080"><strike>Luminary Percontorius Felvin</strike></font> FLAWLESS<br>';}
+		if ($acid == '230058620')  {$bl23 =$fkdate.'<font color="808080"><strike>Shadow Assassin</strike></font> FLAWLESS<br>';}
+		if ($acid == '2208983920') {$bl24 =$fkdate.'<font color="808080"><strike>Shadow Summoner</strike></font> FLAWLESS<br>';}
+		if ($acid == '638291746')  {$bl25 =$fkdate.'<font color="808080"><strike>Lord Triskian Seru</strike></font> FLAWLESS<br>';}
+		if ($acid == '467355313')  {$bl26 =$fkdate.'<font color="808080"><strike>Luminary Hertu Asundr</strike></font> FLAWLESS<br>';}
+		if ($acid == '3687005659') {$bl27 =$fkdate.'<font color="808080"><strike>Luminary Percontorius Felvin</strike></font> FLAWLESS<br>';}
+		if ($acid == '945626810')  {$bl28 =$fkdate.'<font color="808080"><strike>Luminary Cohortis Emon</strike></font> FLAWLESS<br>';}
+		if ($acid == '1668297808') {$bl31 =$fkdate.'<font color="808080"><strike>Eom Va Liako Vess</strike></font> FLAWLESS<br>';}
+		if ($acid == '4021536042') {$bl32 =$fkdate.'<font color="808080"><strike>Stonegrabber Colossus</strike></font> FLAWLESS<br>';}
+		if ($acid == '689453120')  {$bl33 =$fkdate.'<font color="808080"><strike>Dark Xuis Lord</strike></font> FLAWLESS<br>';}
+		if ($acid == '3070911551') {$bl34 =$fkdate.'<font color="808080"><strike>Sambata Mutant</strike></font> FLAWLESS<br>';}
+		if ($acid == '4211153297') {$bl35 =$fkdate.'<font color="808080"><strike>Pli Ca Liako Vess</strike></font> FLAWLESS<br>';}
+		if ($acid == '326555437')  {$bl36 =$fkdate.'<font color="808080"><strike>Stonegrabber Colossus</strike></font> FLAWLESS<br>';}
+		if ($acid == '2174642990') {$bl37 =$fkdate.'<font color="808080"><strike>Sambata Champion</strike></font> FLAWLESS<br>';}
+		if ($acid == '2316649730') {$bl38 =$fkdate.'<font color="808080"><strike>Xi Xia Xius</strike></font> FLAWLESS<br>';}
+		if ($acid == '3399970623') {$bl41 =$fkdate.'<font color="808080"><strike>The Undying</strike></font> FLAWLESS<br>';}
+		if ($acid == '2629148411') {$bl42 =$fkdate.'<font color="808080"><strike>Mindless Blood of Ssraeshza</strike></font> FLAWLESS<br>';}
+		if ($acid == '2966957310') {$bl43 =$fkdate.'<font color="808080"><strike>Kua, Keeper of Shadows</strike></font> FLAWLESS<br>';}
+		if ($acid == '3476903658') {$bl44 =$fkdate.'<font color="808080"><strike>Undead Shissar Lords</strike></font> FLAWLESS<br>';}
+		if ($acid == '17117450')   {$bl45 =$fkdate.'<font color="808080"><strike>Remnant Ferahhal</strike></font> FLAWLESS<br>';}
+		if ($acid == '979358066')  {$bl46 =$fkdate.'<font color="808080"><strike>Ssyre, Furnace of Wrath</strike></font> FLAWLESS<br>';}
+		if ($acid == '869954561')  {$bl47 =$fkdate.'<font color="808080"><strike>The Timeless One</strike></font> FLAWLESS<br>';}
+		if ($acid == '979358066')  {$bl48 =$fkdate.'<font color="808080"><strike>Vyzh\'dra the Unleashed</strike></font> FLAWLESS<br>';}
+		if ($acid == '3932870848') {$bl49 =$fkdate.'<font color="808080"><strike>Deactivated Blood of Ssraeshza</strike></font> FLAWLESS<br>';}
+		if ($acid == '26304636')   {$bl410 =$fkdate.'<font color="808080"><strike>Kua, Watcher of Wanes</strike></font> FLAWLESS<br>';}
+		if ($acid == '1464630059') {$bl411 =$fkdate.'<font color="808080"><strike>R\'thessil and Zeltheen</strike></font> FLAWLESS<br>';}
+		if ($acid == '2718452808') {$bl412 =$fkdate.'<font color="808080"><strike>Remnant Ferahhal</strike></font> FLAWLESS<br>';}
+		if ($acid == '1283495753') {$bl413 =$fkdate.'<font color="808080"><strike>Ssyre, the Fading Fire</strike></font> FLAWLESS<br>';}
+		if ($acid == '1157968442') {$bl414 =$fkdate.'<font color="808080"><strike>Timeless Golem</strike></font> FLAWLESS<br>';}
+		if ($acid == '1343283925') {$bl51 =$fkdate.'<font color="808080"><strike>Enraged Shik\'nar Imperiatrix</strike></font> FLAWLESS<br>';}
+		if ($acid == '3005337448') {$bl52 =$fkdate.'<font color="808080"><strike>Praetorian K\'Tikrn</strike></font> FLAWLESS<br>';}
+		if ($acid == '2092423681') {$bl53 =$fkdate.'<font color="808080"><strike>Enraged Rockhopper Pouncer</strike></font> FLAWLESS<br>';}
+		if ($acid == '2824189597') {$bl54 =$fkdate.'<font color="808080"><strike>Thought Horror Abberation</strike></font> FLAWLESS<br>';}
+		if ($acid == '3967811588') {$bl55 =$fkdate.'<font color="808080"><strike>Shik\'Nar Imperiatrix</strike></font> FLAWLESS<br>';}
+		if ($acid == '1785016564') {$bl56 =$fkdate.'<font color="808080"><strike>Praetorian K\'Tikrn</strike></font> FLAWLESS<br>';}
+		if ($acid == '3012021095') {$bl57 =$fkdate.'<font color="808080"><strike>Rockhopper Pouncer</strike></font> FLAWLESS<br>';}
+		if ($acid == '2114443331') {$bl58 =$fkdate.'<font color="808080"><strike>Thought Horror Overfiend</strike></font> FLAWLESS<br>';}
+		if ($acid == '1460476392') {$bl61 =$fkdate.'<font color="808080"><strike>Echo of Ancient Knowledge</strike></font> FLAWLESS<br>';}
+		if ($acid == '2231653822') {$bl62 =$fkdate.'<font color="808080"><strike>Portabellius Shrieker</strike></font> FLAWLESS<br>';}
+		if ($acid == '484186467')  {$bl63 =$fkdate.'<font color="808080"><strike>Vestgal Poltergeist</strike></font> FLAWLESS<br>';}
+		if ($acid == '3626152230') {$bl64 =$fkdate.'<font color="808080"><strike>Nhekrin, Dual Master</strike></font> FLAWLESS<br>';}
+		if ($acid == '886649389')  {$bl65 =$fkdate.'<font color="808080"><strike>Nhekrin</strike></font> FLAWLESS<br>';}
+		if ($acid == '3226009154') {$bl66 =$fkdate.'<font color="808080"><strike>Palomidiar Allakhaji</strike></font> FLAWLESS<br>';}
+		if ($acid == '1180851627') {$bl67 =$fkdate.'<font color="808080"><strike>Portabellius Shrieker</strike></font> FLAWLESS<br>';}
+		if ($acid == '2225943714') {$bl68 =$fkdate.'<font color="808080"><strike>Vestigal Broker</strike></font> FLAWLESS<br>';}
+		if ($acid == '999999999')  {$bl71 =$fkdate.'<font color="808080"><strike>Rhyll, Bringer of Shadows</strike></font> FLAWLESS<br>';}
+		//if ($acid == '999999999')  {$bl72 =$fkdate.'<font color="808080"><strike>Kaas Thox Xi Aten Ha Ra</strike></font> FLAWLESS<br>';}
+		//if ($acid == '999999999')  {$bl73 =$fkdate.'<font color="808080"><strike>The Spire Lord</strike></font> FLAWLESS<br>';}
 		}
 		$killslist = array($c1,$c2,$c3,$c4,$c5,$c6,$c7,$c8,$c9,$contested,
 						   $ar1,$ar2,$ar3,$ar4,$ar5,$ar6,$ar7,$ar8,$ar9,$ar10,$arena,
@@ -1538,6 +1775,13 @@ class eq2progress_portal extends portal_generic {
 						   $fkd1,$fkd,
 						   $fts1,$fts2,$fts3,$fts4,$fts5,$fts,
 						   $ftrz1,$ftrz2,$ftrz3,$ftrz4,$ftrz5,$ftrz,
+						   $bl11,$bl12,$bl13,$bl14,$bl15,$bl16,$bl17,$bl18,$bl1,
+						   $bl21,$bl22,$bl23,$bl24,$bl25,$bl26,$bl27,$bl28,$bl2,
+						   $bl31,$bl32,$bl33,$bl34,$bl35,$bl36,$bl37,$bl38,$bl3,
+						   $bl41,$bl42,$bl43,$bl44,$bl45,$bl46,$bl47,$bl48,$bl49,$bl410,$bl411,$bl412,$bl413,$bl414,$bl4,
+						   $bl51,$bl52,$bl53,$bl54,$bl55,$bl56,$bl57,$bl58,$bl5,
+						   $bl61,$bl62,$bl63,$bl64,$bl65,$bl66,$bl67,$bl68,$bl6,
+						   $bl71,$bl7,
 						   );
 		$this->pdc->put('portal.module.eq2progress.'.$this->root_path, $killslist, 3600);
 				}
@@ -1583,7 +1827,7 @@ class eq2progress_portal extends portal_generic {
         	$aomavatar = ($killslist[134].$killslist[135].$killslist[136].$killslist[137].$killslist[138]);
 		$zonetotal17 = ($killslist[139]);
 		$mal1 = ($killslist[140].$killslist[141].$killslist[142].$killslist[143]);
-		$zonetotal18 = ($killslist[144]);
+		 $zonetotal18 = ($killslist[144]);
 		$mal2 = ($killslist[145].$killslist[146].$killslist[147]);
 		$zonetotal19 = ($killslist[148]);
 		$mal3 = ($killslist[149].$killslist[150].$killslist[151]);
@@ -1691,6 +1935,21 @@ class eq2progress_portal extends portal_generic {
 		$zonetotal63 = ($killslist[465]);
 		$fabledtrz = ($killslist[466].$killslist[467].$killslist[468].$killslist[469].$killslist[470]);
 		$zonetotal64 = ($killslist[471]);
+		$bl1t = ($killslist[472].$killslist[473].$killslist[474].$killslist[475].$killslist[476].$killslist[477].$killslist[478].$killslist[479]);
+		$zonetotal65 = ($killslist[480]);
+		$bl2t = ($killslist[481].$killslist[482].$killslist[483].$killslist[484].$killslist[485].$killslist[486].$killslist[487].$killslist[488]);
+		$zonetotal66 = ($killslist[489]);
+		$bl3t = ($killslist[490].$killslist[491].$killslist[492].$killslist[493].$killslist[494].$killslist[495].$killslist[496].$killslist[497]);
+		$zonetotal67 = ($killslist[498]);
+		$bl4t = ($killslist[499].$killslist[500].$killslist[501].$killslist[502].$killslist[503].$killslist[504].$killslist[505].
+		$killslist[506].$killslist[507].$killslist[508].$killslist[509].$killslist[510].$killslist[511].$killslist[512]);
+		$zonetotal68 = ($killslist[513]);
+		$bl5t = ($killslist[514].$killslist[515].$killslist[516].$killslist[517].$killslist[518].$killslist[519].$killslist[520].$killslist[521]);
+		$zonetotal69 = ($killslist[522]);
+		$bl6t = ($killslist[523].$killslist[524].$killslist[525].$killslist[526].$killslist[527].$killslist[528].$killslist[529].$killslist[530]);
+		$zonetotal70 = ($killslist[531]);
+		$bl7t = ($killslist[532]);
+		$zonetotal71 = ($killslist[533]);
 		$zonename1 = $cval; 	      $zonemax1 = $contmax;        $zonetip1 = $contes;
 		$zonename2 = $arval; 	      $zonemax2 = $arenamax;       $zonetip2 = $gods;
 		$zonename3 = $hval;  	      $zonemax3 = $harrowmax;      $zonetip3 = $har;
@@ -1723,40 +1982,47 @@ class eq2progress_portal extends portal_generic {
 		$zonename30 = $tot4val;       $zonemax30 = $tot4max;       $zonetip30 = $terr4;
 		$zonename31 = $siegeval;      $zonemax31 = $siegemax;      $zonetip31 = $tsiege;
 		$zonename32 = $fcazicval;     $zonemax32 = $fcazicmax;     $zonetip32 = $tfcazic;
-		$zonename33 = $ffdval;        $zonemax33 = $ffdmax;        $zonetip33 = $tffd;
-		$zonename34 = $ka1val;        $zonemax34 = $ka1max;        $zonetip34 = $kuna1;
-		$zonename35 = $ka2val;        $zonemax35 = $ka2max;        $zonetip35 = $kuna2;
-		$zonename36 = $ka3val;        $zonemax36 = $ka3max;        $zonetip36 = $kuna3;
-		$zonename37 = $ka4val;        $zonemax37 = $ka4max;        $zonetip37 = $kuna4;
-		$zonename38 = $ka5val;        $zonemax38 = $ka5max;        $zonetip38 = $kuna5;
-		$zonename39 = $ka6val;        $zonemax39 = $ka6max;        $zonetip39 = $kuna6;
-		$zonename40 = $ka7val;        $zonemax40 = $ka7max;        $zonetip40 = $kuna7;
-		$zonename41 = $ka8val;        $zonemax41 = $ka8max;        $zonetip41 = $kuna8;
-		$zonename42 = $ka9val;        $zonemax42 = $ka9max;        $zonetip42 = $kuna9;
-		$zonename43 = $ka1aval;       $zonemax43 = $ka1amax;       $zonetip43 = $kuna1a;
-		$zonename44 = $ka1bval;       $zonemax44 = $ka1bmax;       $zonetip44 = $kuna1b;
-		$zonename45 = $pop1val;       $zonemax45 = $pop1max;       $zonetip45 = $popr1;
-		$zonename46 = $pop2val;       $zonemax46 = $pop2max;       $zonetip46 = $popr2;
-		$zonename47 = $pop3val;       $zonemax47 = $pop3max;       $zonetip47 = $popr3;
-		$zonename48 = $pop4val;       $zonemax48 = $pop4max;       $zonetip48 = $popr4;
-		$zonename49 = $pop5val;       $zonemax49 = $pop5max;       $zonetip49 = $popr5;
-		$zonename50 = $popsohval;     $zonemax50 = $popsohmax;     $zonetip50 = $popshate;
-		$zonename51 = $ykeshaval;     $zonemax51 = $ykeshamax;     $zonetip51 = $fabykesha;
-		$zonename52 = $chaosd1val;    $zonemax52 = $chaosd1max;    $zonetip52 = $chaosdsc1;
-		$zonename53 = $chaosd2val;    $zonemax53 = $chaosd2max;    $zonetip53 = $chaosdsc2;
-		$zonename54 = $chaosd3val;    $zonemax54 = $chaosd3max;    $zonetip54 = $chaosdsc3;
-		$zonename55 = $chaosd4val;    $zonemax55 = $chaosd4max;    $zonetip55 = $chaosdsc4;
-		$zonename56 = $chaosd5val;    $zonemax56 = $chaosd5max;    $zonetip56 = $chaosdsc5;
-		$zonename57 = $chaosd6val;    $zonemax57 = $chaosd6max;    $zonetip57 = $chaosdsc6;
-		$zonename58 = $chaosd7val;    $zonemax58 = $chaosd7max;    $zonetip58 = $chaosdsc7;
-		$zonename59 = $chaosd8val;    $zonemax59 = $chaosd8max;    $zonetip59 = $chaosdsc8;
-		$zonename60 = $chaosd9val;    $zonemax60 = $chaosd9max;    $zonetip60 = $chaosdsc9;
-		$zonename61 = $mischfval;     $zonemax61 = $mischfmax;     $zonetip61 = $castlemisc;
-		$zonename62 = $fkdval;        $zonemax62 = $fkdmax;   	   $zonetip62 = $fabledkd;
-		$zonename63 = $ftsval;        $zonemax63 = $ftsmax;   	   $zonetip63 = $fabledts;
-		$zonename64 = $ftrzval;       $zonemax64 = $ftrzmax;   	   $zonetip64 = $fabledtrz;
+		$zonename33 = $ffdval;     	  $zonemax33 = $ffdmax;        $zonetip33 = $tffd;
+		$zonename34 = $ka1val;     	  $zonemax34 = $ka1max;        $zonetip34 = $kuna1;
+		$zonename35 = $ka2val;     	  $zonemax35 = $ka2max;        $zonetip35 = $kuna2;
+		$zonename36 = $ka3val;     	  $zonemax36 = $ka3max;        $zonetip36 = $kuna3;
+		$zonename37 = $ka4val;     	  $zonemax37 = $ka4max;        $zonetip37 = $kuna4;
+		$zonename38 = $ka5val;     	  $zonemax38 = $ka5max;        $zonetip38 = $kuna5;
+		$zonename39 = $ka6val;     	  $zonemax39 = $ka6max;        $zonetip39 = $kuna6;
+		$zonename40 = $ka7val;     	  $zonemax40 = $ka7max;        $zonetip40 = $kuna7;
+		$zonename41 = $ka8val;     	  $zonemax41 = $ka8max;        $zonetip41 = $kuna8;
+		$zonename42 = $ka9val;     	  $zonemax42 = $ka9max;        $zonetip42 = $kuna9;
+		$zonename43 = $ka1aval;    	  $zonemax43 = $ka1amax;       $zonetip43 = $kuna1a;
+		$zonename44 = $ka1bval;    	  $zonemax44 = $ka1bmax;       $zonetip44 = $kuna1b;
+		$zonename45 = $pop1val;    	  $zonemax45 = $pop1max;       $zonetip45 = $popr1;
+		$zonename46 = $pop2val;    	  $zonemax46 = $pop2max;       $zonetip46 = $popr2;
+		$zonename47 = $pop3val;    	  $zonemax47 = $pop3max;       $zonetip47 = $popr3;
+		$zonename48 = $pop4val;    	  $zonemax48 = $pop4max;       $zonetip48 = $popr4;
+		$zonename49 = $pop5val;    	  $zonemax49 = $pop5max;       $zonetip49 = $popr5;
+		$zonename50 = $popsohval;  	  $zonemax50 = $popsohmax;     $zonetip50 = $popshate;
+		$zonename51 = $ykeshaval;  	  $zonemax51 = $ykeshamax;     $zonetip51 = $fabykesha;
+		$zonename52 = $chaosd1val; 	  $zonemax52 = $chaosd1max;    $zonetip52 = $chaosdsc1;
+		$zonename53 = $chaosd2val; 	  $zonemax53 = $chaosd2max;    $zonetip53 = $chaosdsc2;
+		$zonename54 = $chaosd3val; 	  $zonemax54 = $chaosd3max;    $zonetip54 = $chaosdsc3;
+		$zonename55 = $chaosd4val; 	  $zonemax55 = $chaosd4max;    $zonetip55 = $chaosdsc4;
+		$zonename56 = $chaosd5val; 	  $zonemax56 = $chaosd5max;    $zonetip56 = $chaosdsc5;
+		$zonename57 = $chaosd6val; 	  $zonemax57 = $chaosd6max;    $zonetip57 = $chaosdsc6;
+		$zonename58 = $chaosd7val; 	  $zonemax58 = $chaosd7max;    $zonetip58 = $chaosdsc7;
+		$zonename59 = $chaosd8val; 	  $zonemax59 = $chaosd8max;    $zonetip59 = $chaosdsc8;
+		$zonename60 = $chaosd9val; 	  $zonemax60 = $chaosd9max;    $zonetip60 = $chaosdsc9;
+		$zonename61 = $mischfval; 	  $zonemax61 = $mischfmax;     $zonetip61 = $castlemisc;
+		$zonename62 = $fkdval;  	  $zonemax62 = $fkdmax;        $zonetip62 = $fabledkd;
+		$zonename63 = $ftsval;  	  $zonemax63 = $ftsmax;        $zonetip63 = $fabledts;
+		$zonename64 = $ftrzval;  	  $zonemax64 = $ftrzmax;       $zonetip64 = $fabledtrz;
+		$zonename65 = $bl1val;  	  $zonemax65 = $bl1max;        $zonetip65 = $bl1t;
+		$zonename66 = $bl2val;  	  $zonemax66 = $bl2max;        $zonetip66 = $bl2t;
+		$zonename67 = $bl3val;  	  $zonemax67 = $bl3max;        $zonetip67 = $bl3t;
+		$zonename68 = $bl4val;  	  $zonemax68 = $bl4max;        $zonetip68 = $bl4t;
+		$zonename69 = $bl5val;  	  $zonemax69 = $bl5max;        $zonetip69 = $bl5t;
+		$zonename70 = $bl6val;  	  $zonemax70 = $bl6max;        $zonetip70 = $bl6t;
+		$zonename71 = $bl7val;  	  $zonemax71 = $bl7max;        $zonetip71 = $bl7t;
 		$out = ''; 
-			for($i=1;$i<=64;$i++) {
+			for($i=1;$i<=71;$i++) {
 			$check = ${"zone".$i};
 			if ($check == TRUE) {
 			$text = ${"zonename".$i}; $value = ${"zonetotal".$i}; $max = ${"zonemax".$i}; $tooltip = ${"zonetip".$i};	
