@@ -17,6 +17,7 @@
  * Modified Version of Hoofy's mybars progression module
  *
  * This version populates the guild raid achievements from the Data Api
+ * V6.51 Minor Bug Fix
  * V6.5 Added 6 BoL Challenge Raid mobs
  * V6.4 Updated Blood of Luclin Challenge Mode mobs
  * V6.3 Added Blood of Luclin
@@ -72,7 +73,7 @@ class eq2progress_portal extends portal_generic {
 	protected static $path		= 'eq2progress';
 	protected static $data		= array(
 		'name'			=> 'EQ2 Progression',
-		'version'		=> '6.5',
+		'version'		=> '6.51',
 		'author'		=> 'Darkmaeg',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Everquest 2 Progression',
@@ -465,7 +466,7 @@ class eq2progress_portal extends portal_generic {
 		if (($this->config('eq2progress_harrows')) == TRUE ) 		{ ($maxbars = $maxbars + 1); ($zone3 = TRUE); }
 		if (($this->config('eq2progress_sleepers')) == TRUE ) 		{ ($maxbars = $maxbars + 1); ($zone4 = TRUE); }
 		if (($this->config('eq2progress_abhorrence')) == TRUE ) 	{ ($maxbars = $maxbars + 1); ($zone5 = TRUE); }
-		if (($this->config('eq2progress_plane')) == TRUE ) 		{ ($maxbars = $maxbars + 1); ($zone6 = TRUE); }
+		if (($this->config('eq2progress_plane')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone6 = TRUE); }
 		if (($this->config('eq2progress_dreadcutter')) == TRUE ) 	{ ($maxbars = $maxbars + 1); ($zone7 = TRUE); }
 		if (($this->config('eq2progress_sirens')) == TRUE ) 		{ ($maxbars = $maxbars + 1); ($zone8 = TRUE); }
 		if (($this->config('eq2progress_desert')) == TRUE ) 		{ ($maxbars = $maxbars + 1); ($zone9 = TRUE); }
@@ -492,16 +493,16 @@ class eq2progress_portal extends portal_generic {
 		if (($this->config('eq2progress_tot4')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone30 = TRUE); }
 		if (($this->config('eq2progress_siege')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone31 = TRUE); }
 		if (($this->config('eq2progress_fcazic')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone32 = TRUE); }
-		if (($this->config('eq2progress_ffd')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone33 = TRUE); }
-		if (($this->config('eq2progress_ka1')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone34 = TRUE); }
-		if (($this->config('eq2progress_ka2')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone35 = TRUE); }
-		if (($this->config('eq2progress_ka3')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone36 = TRUE); }
-		if (($this->config('eq2progress_ka4')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone37 = TRUE); }
-		if (($this->config('eq2progress_ka5')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone38 = TRUE); }
-		if (($this->config('eq2progress_ka6')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone39 = TRUE); }
-		if (($this->config('eq2progress_ka7')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone40 = TRUE); }
-		if (($this->config('eq2progress_ka8')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone41 = TRUE); }
-		if (($this->config('eq2progress_ka9')) == TRUE )  		{ ($maxbars = $maxbars + 1); ($zone42 = TRUE); }
+		if (($this->config('eq2progress_ffd')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone33 = TRUE); }
+		if (($this->config('eq2progress_ka1')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone34 = TRUE); }
+		if (($this->config('eq2progress_ka2')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone35 = TRUE); }
+		if (($this->config('eq2progress_ka3')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone36 = TRUE); }
+		if (($this->config('eq2progress_ka4')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone37 = TRUE); }
+		if (($this->config('eq2progress_ka5')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone38 = TRUE); }
+		if (($this->config('eq2progress_ka6')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone39 = TRUE); }
+		if (($this->config('eq2progress_ka7')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone40 = TRUE); }
+		if (($this->config('eq2progress_ka8')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone41 = TRUE); }
+		if (($this->config('eq2progress_ka9')) == TRUE )		{ ($maxbars = $maxbars + 1); ($zone42 = TRUE); }
 		if (($this->config('eq2progress_ka1a')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone43 = TRUE); }
 		if (($this->config('eq2progress_ka1b')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone44 = TRUE); }
 		if (($this->config('eq2progress_pop1')) == TRUE )   		{ ($maxbars = $maxbars + 1); ($zone45 = TRUE); }
@@ -1682,7 +1683,7 @@ class eq2progress_portal extends portal_generic {
 		if ($acid == '17117450')   {$bl45 =$fkdate.'<font color="808080"><strike>Remnant Ferahhal</strike></font> FLAWLESS<br>';}
 		if ($acid == '979358066')  {$bl46 =$fkdate.'<font color="808080"><strike>Ssyre, Furnace of Wrath</strike></font> FLAWLESS<br>';}
 		if ($acid == '869954561')  {$bl47 =$fkdate.'<font color="808080"><strike>The Timeless One</strike></font> FLAWLESS<br>';}
-		if ($acid == '979358066')  {$bl48 =$fkdate.'<font color="808080"><strike>Vyzh\'dra the Unleashed</strike></font> FLAWLESS<br>';}
+		if ($acid == '1772753533') {$bl48 =$fkdate.'<font color="808080"><strike>Vyzh\'dra the Unleashed</strike></font> FLAWLESS<br>';}
 		if ($acid == '3932870848') {$bl49 =$fkdate.'<font color="808080"><strike>Deactivated Blood of Ssraeshza</strike></font> FLAWLESS<br>';}
 		if ($acid == '26304636')   {$bl410 =$fkdate.'<font color="808080"><strike>Kua, Watcher of Wanes</strike></font> FLAWLESS<br>';}
 		if ($acid == '1464630059') {$bl411 =$fkdate.'<font color="808080"><strike>R\'thessil and Zeltheen</strike></font> FLAWLESS<br>';}
@@ -1982,45 +1983,45 @@ class eq2progress_portal extends portal_generic {
 		$zonename30 = $tot4val;       $zonemax30 = $tot4max;       $zonetip30 = $terr4;
 		$zonename31 = $siegeval;      $zonemax31 = $siegemax;      $zonetip31 = $tsiege;
 		$zonename32 = $fcazicval;     $zonemax32 = $fcazicmax;     $zonetip32 = $tfcazic;
-		$zonename33 = $ffdval;     	  $zonemax33 = $ffdmax;        $zonetip33 = $tffd;
-		$zonename34 = $ka1val;     	  $zonemax34 = $ka1max;        $zonetip34 = $kuna1;
-		$zonename35 = $ka2val;     	  $zonemax35 = $ka2max;        $zonetip35 = $kuna2;
-		$zonename36 = $ka3val;     	  $zonemax36 = $ka3max;        $zonetip36 = $kuna3;
-		$zonename37 = $ka4val;     	  $zonemax37 = $ka4max;        $zonetip37 = $kuna4;
-		$zonename38 = $ka5val;     	  $zonemax38 = $ka5max;        $zonetip38 = $kuna5;
-		$zonename39 = $ka6val;     	  $zonemax39 = $ka6max;        $zonetip39 = $kuna6;
-		$zonename40 = $ka7val;     	  $zonemax40 = $ka7max;        $zonetip40 = $kuna7;
-		$zonename41 = $ka8val;     	  $zonemax41 = $ka8max;        $zonetip41 = $kuna8;
-		$zonename42 = $ka9val;     	  $zonemax42 = $ka9max;        $zonetip42 = $kuna9;
-		$zonename43 = $ka1aval;    	  $zonemax43 = $ka1amax;       $zonetip43 = $kuna1a;
-		$zonename44 = $ka1bval;    	  $zonemax44 = $ka1bmax;       $zonetip44 = $kuna1b;
-		$zonename45 = $pop1val;    	  $zonemax45 = $pop1max;       $zonetip45 = $popr1;
-		$zonename46 = $pop2val;    	  $zonemax46 = $pop2max;       $zonetip46 = $popr2;
-		$zonename47 = $pop3val;    	  $zonemax47 = $pop3max;       $zonetip47 = $popr3;
-		$zonename48 = $pop4val;    	  $zonemax48 = $pop4max;       $zonetip48 = $popr4;
-		$zonename49 = $pop5val;    	  $zonemax49 = $pop5max;       $zonetip49 = $popr5;
-		$zonename50 = $popsohval;  	  $zonemax50 = $popsohmax;     $zonetip50 = $popshate;
-		$zonename51 = $ykeshaval;  	  $zonemax51 = $ykeshamax;     $zonetip51 = $fabykesha;
-		$zonename52 = $chaosd1val; 	  $zonemax52 = $chaosd1max;    $zonetip52 = $chaosdsc1;
-		$zonename53 = $chaosd2val; 	  $zonemax53 = $chaosd2max;    $zonetip53 = $chaosdsc2;
-		$zonename54 = $chaosd3val; 	  $zonemax54 = $chaosd3max;    $zonetip54 = $chaosdsc3;
-		$zonename55 = $chaosd4val; 	  $zonemax55 = $chaosd4max;    $zonetip55 = $chaosdsc4;
-		$zonename56 = $chaosd5val; 	  $zonemax56 = $chaosd5max;    $zonetip56 = $chaosdsc5;
-		$zonename57 = $chaosd6val; 	  $zonemax57 = $chaosd6max;    $zonetip57 = $chaosdsc6;
-		$zonename58 = $chaosd7val; 	  $zonemax58 = $chaosd7max;    $zonetip58 = $chaosdsc7;
-		$zonename59 = $chaosd8val; 	  $zonemax59 = $chaosd8max;    $zonetip59 = $chaosdsc8;
-		$zonename60 = $chaosd9val; 	  $zonemax60 = $chaosd9max;    $zonetip60 = $chaosdsc9;
-		$zonename61 = $mischfval; 	  $zonemax61 = $mischfmax;     $zonetip61 = $castlemisc;
-		$zonename62 = $fkdval;  	  $zonemax62 = $fkdmax;        $zonetip62 = $fabledkd;
-		$zonename63 = $ftsval;  	  $zonemax63 = $ftsmax;        $zonetip63 = $fabledts;
-		$zonename64 = $ftrzval;  	  $zonemax64 = $ftrzmax;       $zonetip64 = $fabledtrz;
-		$zonename65 = $bl1val;  	  $zonemax65 = $bl1max;        $zonetip65 = $bl1t;
-		$zonename66 = $bl2val;  	  $zonemax66 = $bl2max;        $zonetip66 = $bl2t;
-		$zonename67 = $bl3val;  	  $zonemax67 = $bl3max;        $zonetip67 = $bl3t;
-		$zonename68 = $bl4val;  	  $zonemax68 = $bl4max;        $zonetip68 = $bl4t;
-		$zonename69 = $bl5val;  	  $zonemax69 = $bl5max;        $zonetip69 = $bl5t;
-		$zonename70 = $bl6val;  	  $zonemax70 = $bl6max;        $zonetip70 = $bl6t;
-		$zonename71 = $bl7val;  	  $zonemax71 = $bl7max;        $zonetip71 = $bl7t;
+		$zonename33 = $ffdval;        $zonemax33 = $ffdmax;        $zonetip33 = $tffd;
+		$zonename34 = $ka1val;        $zonemax34 = $ka1max;        $zonetip34 = $kuna1;
+		$zonename35 = $ka2val;        $zonemax35 = $ka2max;        $zonetip35 = $kuna2;
+		$zonename36 = $ka3val;        $zonemax36 = $ka3max;        $zonetip36 = $kuna3;
+		$zonename37 = $ka4val;        $zonemax37 = $ka4max;        $zonetip37 = $kuna4;
+		$zonename38 = $ka5val;        $zonemax38 = $ka5max;        $zonetip38 = $kuna5;
+		$zonename39 = $ka6val;        $zonemax39 = $ka6max;        $zonetip39 = $kuna6;
+		$zonename40 = $ka7val;        $zonemax40 = $ka7max;        $zonetip40 = $kuna7;
+		$zonename41 = $ka8val;        $zonemax41 = $ka8max;        $zonetip41 = $kuna8;
+		$zonename42 = $ka9val;        $zonemax42 = $ka9max;        $zonetip42 = $kuna9;
+		$zonename43 = $ka1aval;       $zonemax43 = $ka1amax;       $zonetip43 = $kuna1a;
+		$zonename44 = $ka1bval;       $zonemax44 = $ka1bmax;       $zonetip44 = $kuna1b;
+		$zonename45 = $pop1val;       $zonemax45 = $pop1max;       $zonetip45 = $popr1;
+		$zonename46 = $pop2val;       $zonemax46 = $pop2max;       $zonetip46 = $popr2;
+		$zonename47 = $pop3val;       $zonemax47 = $pop3max;       $zonetip47 = $popr3;
+		$zonename48 = $pop4val;       $zonemax48 = $pop4max;       $zonetip48 = $popr4;
+		$zonename49 = $pop5val;       $zonemax49 = $pop5max;       $zonetip49 = $popr5;
+		$zonename50 = $popsohval;     $zonemax50 = $popsohmax;     $zonetip50 = $popshate;
+		$zonename51 = $ykeshaval;     $zonemax51 = $ykeshamax;     $zonetip51 = $fabykesha;
+		$zonename52 = $chaosd1val;    $zonemax52 = $chaosd1max;    $zonetip52 = $chaosdsc1;
+		$zonename53 = $chaosd2val;    $zonemax53 = $chaosd2max;    $zonetip53 = $chaosdsc2;
+		$zonename54 = $chaosd3val;    $zonemax54 = $chaosd3max;    $zonetip54 = $chaosdsc3;
+		$zonename55 = $chaosd4val;    $zonemax55 = $chaosd4max;    $zonetip55 = $chaosdsc4;
+		$zonename56 = $chaosd5val;    $zonemax56 = $chaosd5max;    $zonetip56 = $chaosdsc5;
+		$zonename57 = $chaosd6val;    $zonemax57 = $chaosd6max;    $zonetip57 = $chaosdsc6;
+		$zonename58 = $chaosd7val;    $zonemax58 = $chaosd7max;    $zonetip58 = $chaosdsc7;
+		$zonename59 = $chaosd8val;    $zonemax59 = $chaosd8max;    $zonetip59 = $chaosdsc8;
+		$zonename60 = $chaosd9val;    $zonemax60 = $chaosd9max;    $zonetip60 = $chaosdsc9;
+		$zonename61 = $mischfval;     $zonemax61 = $mischfmax;     $zonetip61 = $castlemisc;
+		$zonename62 = $fkdval;        $zonemax62 = $fkdmax;        $zonetip62 = $fabledkd;
+		$zonename63 = $ftsval;        $zonemax63 = $ftsmax;        $zonetip63 = $fabledts;
+		$zonename64 = $ftrzval;       $zonemax64 = $ftrzmax;       $zonetip64 = $fabledtrz;
+		$zonename65 = $bl1val;        $zonemax65 = $bl1max;        $zonetip65 = $bl1t;
+		$zonename66 = $bl2val;        $zonemax66 = $bl2max;        $zonetip66 = $bl2t;
+		$zonename67 = $bl3val;        $zonemax67 = $bl3max;        $zonetip67 = $bl3t;
+		$zonename68 = $bl4val;        $zonemax68 = $bl4max;        $zonetip68 = $bl4t;
+		$zonename69 = $bl5val;        $zonemax69 = $bl5max;        $zonetip69 = $bl5t;
+		$zonename70 = $bl6val;        $zonemax70 = $bl6max;        $zonetip70 = $bl6t;
+		$zonename71 = $bl7val;        $zonemax71 = $bl7max;        $zonetip71 = $bl7t;
 		$out = ''; 
 			for($i=1;$i<=71;$i++) {
 			$check = ${"zone".$i};
