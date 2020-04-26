@@ -17,6 +17,7 @@
  * Modified Version of Hoofy's mybars progression module
  *
  * This version populates the guild raid achievements from the Data Api
+ * V6.52 Minor Bug Fix
  * V6.51 Minor Bug Fix
  * V6.5 Added 6 BoL Challenge Raid mobs
  * V6.4 Updated Blood of Luclin Challenge Mode mobs
@@ -73,7 +74,7 @@ class eq2progress_portal extends portal_generic {
 	protected static $path		= 'eq2progress';
 	protected static $data		= array(
 		'name'			=> 'EQ2 Progression',
-		'version'		=> '6.51',
+		'version'		=> '6.52',
 		'author'		=> 'Darkmaeg',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Everquest 2 Progression',
@@ -1662,7 +1663,7 @@ class eq2progress_portal extends portal_generic {
 		if ($acid == '3996857508') {$bl18 =$fkdate.'<font color="808080"><strike>Tegu, Pegu, and Regu</strike></font> FLAWLESS<br>';}
 		if ($acid == '3404729385') {$bl21 =$fkdate.'<font color="808080"><strike>Lord Commander Seru</strike></font> FLAWLESS<br>';}
 		if ($acid == '1283906161') {$bl22 =$fkdate.'<font color="808080"><strike>Luminary Percontorius Felvin</strike></font> FLAWLESS<br>';}
-		if ($acid == '230058620')  {$bl23 =$fkdate.'<font color="808080"><strike>Shadow Assassin</strike></font> FLAWLESS<br>';}
+		if ($acid == '2300586200') {$bl23 =$fkdate.'<font color="808080"><strike>Shadow Assassin</strike></font> FLAWLESS<br>';}
 		if ($acid == '2208983920') {$bl24 =$fkdate.'<font color="808080"><strike>Shadow Summoner</strike></font> FLAWLESS<br>';}
 		if ($acid == '638291746')  {$bl25 =$fkdate.'<font color="808080"><strike>Lord Triskian Seru</strike></font> FLAWLESS<br>';}
 		if ($acid == '467355313')  {$bl26 =$fkdate.'<font color="808080"><strike>Luminary Hertu Asundr</strike></font> FLAWLESS<br>';}
