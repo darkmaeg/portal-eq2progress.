@@ -13,7 +13,7 @@
  * @package		eqdkp-plus
  * @version		$Rev: 12732 $
  * 
- * $Id: german.php 12732 2013-01-04 22:03:33Z hoofy_leon $
+ * $Id: english.php 12732 2013-01-04 22:03:33Z hoofy_leon $
  */
 
 if (!defined('EQDKP_INC')) {
@@ -21,7 +21,7 @@ if (!defined('EQDKP_INC')) {
 }
 
 $lang = array(
-	'eq2progress_f_eq2progress_headtext'	=> 'Titel des Moduls',
+	'eq2progress_f_eq2progress_headtext'	=> 'Title of the module',
 	'eq2progress_f_eq2progress_shattered'	=> 'Shattered Lands',
 	'eq2progress_f_eq2progress_splitpaw'	=> 'Splitpaw Saga',
 	'eq2progress_f_eq2progress_desert' 	=> 'Desert of Flames',
@@ -103,6 +103,19 @@ $lang = array(
 	'eq2progress_f_eq2progress_fkd'         => 'Fabled Kael Drakkel',
 	'eq2progress_f_eq2progress_ftrz'        => 'Fabled Temple of Rallos Zek',
 	'eq2progress_f_eq2progress_fts'         => 'Fabled Throne of Storms',
-	'eq2progress_f_eq2progress_date'	=> 'Show Date Killed?<BR>*Note: Data is updated every 24 hours.<BR>Changing date setting will take effect next update.',
+	'eq2progress_f_eq2progress_bl1'         => 'Crimson Barrons',
+	'eq2progress_f_eq2progress_bl2'         => 'Fading Arches',
+	'eq2progress_f_eq2progress_bl3'         => 'Emerging Eclipse',
+	'eq2progress_f_eq2progress_bl4'         => 'Ssraeshza\'s Hollowed Halls',
+	'eq2progress_f_eq2progress_bl5'         => 'Twisted Vista',
+	'eq2progress_f_eq2progress_bl6'         => 'Remembrance',
+	'eq2progress_f_eq2progress_bl7'         => 'Luclin Contested',
+	'eq2progress_f_eq2progress_bl8'         => 'Solusek\'s Eye',
+	'eq2progress_f_eq2progress_bl9'         => 'Fabled Plane of War',
+	'eq2progress_f_eq2progress_ros1'        => 'Vex Thal',
+	'eq2progress_f_eq2progress_ros2'        => 'Shadeweaver\'s Thicket',
+	'eq2progress_f_eq2progress_ros3'        => 'Echo Caverns',
+	'eq2progress_f_eq2progress_ros4'        => 'Contested',
+	'eq2progress_f_eq2progress_date'	  	=> 'Show Date Killed?<BR>*Note: Data is updated every 24 hours.<BR>Changing date setting will take effect next update.',
 );
 ?>
