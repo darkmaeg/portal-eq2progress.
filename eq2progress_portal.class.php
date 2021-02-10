@@ -17,7 +17,8 @@
  * Modified Version of Hoofy's mybars progression module
  *
  * This version populates the guild raid achievements from the Data Api
- * V6.60 Added Reign of Shadows Raids
+ * V6.61 Minor Fix
+ * V6.60 Added Reign of Shadows
  * V6.55 Minor Fix
  * V6.54 Added Reignite the Flames Raids
  * V6.53 Added Contest Raid Mob
@@ -64,9 +65,9 @@
  * V1.5 Added Temple of Veeshan: The Dreadscale's Maw
  * V1.4 Added Contested X4 in High Keep
  * V1.3 Added Fabled Kingdom of Sky Zones
- * Added admin menu to choose to display kill dates
+ *      Added admin menu to choose to display kill dates
  * V1.2 Added ToV Raid Zones, 3 New Contested Avatars, Arena of the Gods
- * Added admin menu setting to choose which zones to display
+ *      Added admin menu setting to choose which zones to display
  * V1.1 Initial Release - CoE Raid Zones & Contested Avatars
  */
 
@@ -78,7 +79,7 @@ class eq2progress_portal extends portal_generic {
 	protected static $path		= 'eq2progress';
 	protected static $data		= array(
 		'name'			=> 'EQ2 Progression',
-		'version'		=> '6.60',
+		'version'		=> '6.61',
 		'author'		=> 'Darkmaeg',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Everquest 2 Progression',
@@ -1858,24 +1859,24 @@ class eq2progress_portal extends portal_generic {
 		if ($acid == '2882542255') {$bl95 = $fkdate.'<font color="808080"><strike>Tagrin Maldric</strike></font> FLAWLESS<br>';}
 		if ($acid == '642996339')  {$bl96 = $fkdate.'<font color="808080"><strike>Berik Bloodfist</strike></font> FLAWLESS<br>';}
 		if ($acid == '1267062114') {$bl97 = $fkdate.'<font color="808080"><strike>The Enraged War Boar</strike></font> FLAWLESS<br>';} 
-		if ($acid == '823313119')  {$ros11 = $fkdate.'<font color="808080"><strike>The Creator</strike></font> FLAWLESS<br>';} 
-		if ($acid == '326405197')  {$ros12 = $fkdate.'<font color="808080"><strike>Kaas Thox</strike></font> FLAWLESS<br>';} 
-		if ($acid == '1209463812') {$ros13 = $fkdate.'<font color="808080"><strike>Zun Liako Ferun, Zun Diabo Xiun, and Zun Thall Heral</strike></font> FLAWLESS<br>';} 
-		if ($acid == '2435060221') {$ros14 = $fkdate.'<font color="808080"><strike>Fanatical Betrayer IV</strike></font> FLAWLESS<br>';} 
-		if ($acid == '2459417831') {$ros15 = $fkdate.'<font color="808080"><strike>Zealot Betrayer III</strike></font> FLAWLESS<br>';} 
-		if ($acid == '707517314')  {$ros16 = $fkdate.'<font color="808080"><strike>Maniacal Betrayer II</strike></font> FLAWLESS<br>';} 
-		if ($acid == '949908588')  {$ros17 = $fkdate.'<font color="808080"><strike>Apostle Betrayer I</strike></font> FLAWLESS<br>';} 
-		if ($acid == '3975437458') {$ros18 = $fkdate.'<font color="808080"><strike>Xakra Fu\'un</strike></font> FLAWLESS<br>';} 
-		if ($acid == '1446166111') {$ros19 = $fkdate.'<font color="808080"><strike>Va Dyn Khar</strike></font> FLAWLESS<br>';} 
-		if ($acid == '3622982097') {$ros21 = $fkdate.'<font color="808080"><strike>Khati Sha</strike></font> FLAWLESS<br>';} 
+		if ($acid == '1356635236') {$ros11 = $fkdate.'<font color="808080"><strike>The Creator</strike></font> FLAWLESS<br>';} 
+		if ($acid == '2560026115') {$ros12 = $fkdate.'<font color="808080"><strike>Kaas Thox</strike></font> FLAWLESS<br>';} 
+		if ($acid == '3821748515') {$ros13 = $fkdate.'<font color="808080"><strike>Zun Liako Ferun, Zun Diabo Xiun, and Zun Thall Heral</strike></font> FLAWLESS<br>';} 
+		if ($acid == '1387884754') {$ros14 = $fkdate.'<font color="808080"><strike>Fanatical Betrayer IV</strike></font> FLAWLESS<br>';} 
+		if ($acid == '1359666632') {$ros15 = $fkdate.'<font color="808080"><strike>Zealot Betrayer III</strike></font> FLAWLESS<br>';} 
+		if ($acid == '3921066669') {$ros16 = $fkdate.'<font color="808080"><strike>Maniacal Betrayer II</strike></font> FLAWLESS<br>';} 
+		if ($acid == '4211283267') {$ros17 = $fkdate.'<font color="808080"><strike>Apostle Betrayer I</strike></font> FLAWLESS<br>';} 
+		if ($acid == '2098975343') {$ros18 = $fkdate.'<font color="808080"><strike>Xakra Fu\'un</strike></font> FLAWLESS<br>';} 
+		if ($acid == '2511331184') {$ros19 = $fkdate.'<font color="808080"><strike>Va Dyn Khar</strike></font> FLAWLESS<br>';}
+		if ($acid == '1901510323') {$ros21 = $fkdate.'<font color="808080"><strike>Khati Sha</strike></font> FLAWLESS<br>';} 
 		if ($acid == '23430855')   {$ros22 = $fkdate.'<font color="808080"><strike>Fenirek\'tal</strike></font> FLAWLESS<br>';} 
-		if ($acid == '4001261287') {$ros23 = $fkdate.'<font color="808080"><strike>Hoggith</strike></font> FLAWLESS<br>';} 
-		if ($acid == '3398946219') {$ros24 = $fkdate.'<font color="808080"><strike>Nelon Hes</strike></font> FLAWLESS<br>';} 
-		if ($acid == '2775203849') {$ros31 = $fkdate.'<font color="808080"><strike>Greig Veneficus</strike></font> FLAWLESS<br>';} 
-		if ($acid == '1578027977') {$ros32 = $fkdate.'<font color="808080"><strike>Jerrek Amaw\'Rosis</strike></font> FLAWLESS<br>';} 
-		if ($acid == '2502759366') {$ros33 = $fkdate.'<font color="808080"><strike>Lhurzz</strike></font> FLAWLESS<br>';} 
-		if ($acid == '2270131434') {$ros34 = $fkdate.'<font color="808080"><strike>Ancient Burrower Beast</strike></font> FLAWLESS<br>';} 
-		if ($acid == '2743413289') {$ros41 = $fkdate.'<font color="808080"><strike>The Grimling Hero</strike></font> FLAWLESS<br>';} 
+		if ($acid == '1298449020') {$ros23 = $fkdate.'<font color="808080"><strike>Hoggith</strike></font> FLAWLESS<br>';} 
+		if ($acid == '215489166')  {$ros24 = $fkdate.'<font color="808080"><strike>Nelon Hes</strike></font> FLAWLESS<br>';} 
+		if ($acid == '3108060011') {$ros31 = $fkdate.'<font color="808080"><strike>Greig Veneficus</strike></font> FLAWLESS<br>';} 
+		if ($acid == '1940890181') {$ros32 = $fkdate.'<font color="808080"><strike>Jerrek Amaw\'Rosis</strike></font> FLAWLESS<br>';} 
+		if ($acid == '915224777')  {$ros33 = $fkdate.'<font color="808080"><strike>Lhurzz</strike></font> FLAWLESS<br>';} 
+		if ($acid == '3210550950') {$ros34 = $fkdate.'<font color="808080"><strike>Ancient Burrower Beast</strike></font> FLAWLESS<br>';} 
+		if ($acid == '2392016538') {$ros41 = $fkdate.'<font color="808080"><strike>The Grimling Hero</strike></font> FLAWLESS<br>';} 
 		}
 		$killslist = array($c1,$c2,$c3,$c4,$c5,$c6,$c7,$c8,$c9,$contested,
 						   $ar1,$ar2,$ar3,$ar4,$ar5,$ar6,$ar7,$ar8,$ar9,$ar10,$arena,
@@ -1984,7 +1985,7 @@ class eq2progress_portal extends portal_generic {
 		$zonetotal9 = ($killslist[78]);
 		$tears = ($killslist[79].$killslist[80].$killslist[81].$killslist[82].$killslist[83].$killslist[84].$killslist[85].$killslist[86]
 		          .$killslist[87].$killslist[88].$killslist[89].$killslist[90].$killslist[91].$killslist[92].$killslist[93]);
-	    $zonetotal10 = ($killslist[94]);
+	    	$zonetotal10 = ($killslist[94]);
 		$ascent = ($killslist[95].$killslist[96].$killslist[97].$killslist[98].$killslist[99].$killslist[100]
 		           .$killslist[101].$killslist[102].$killslist[103].$killslist[104].$killslist[105]);
 		$zonetotal11 = ($killslist[106]);
@@ -1998,7 +1999,7 @@ class eq2progress_portal extends portal_generic {
 		$zonetotal15 = ($killslist[128]);
 		$agesen = ($killslist[129].$killslist[130].$killslist[131].$killslist[132]);
 		$zonetotal16 = ($killslist[133]);
-        $aomavatar = ($killslist[134].$killslist[135].$killslist[136].$killslist[137].$killslist[138]);
+        	$aomavatar = ($killslist[134].$killslist[135].$killslist[136].$killslist[137].$killslist[138]);
 		$zonetotal17 = ($killslist[139]);
 		$mal1 = ($killslist[140].$killslist[141].$killslist[142].$killslist[143]);
 		$zonetotal18 = ($killslist[144]);
@@ -2169,51 +2170,51 @@ class eq2progress_portal extends portal_generic {
 		$zonename30 = $tot4val;       $zonemax30 = $tot4max;       $zonetip30 = $terr4;
 		$zonename31 = $siegeval;      $zonemax31 = $siegemax;      $zonetip31 = $tsiege;
 		$zonename32 = $fcazicval;     $zonemax32 = $fcazicmax;     $zonetip32 = $tfcazic;
-		$zonename33 = $ffdval;     	  $zonemax33 = $ffdmax;        $zonetip33 = $tffd;
-		$zonename34 = $ka1val;     	  $zonemax34 = $ka1max;        $zonetip34 = $kuna1;
-		$zonename35 = $ka2val;     	  $zonemax35 = $ka2max;        $zonetip35 = $kuna2;
-		$zonename36 = $ka3val;     	  $zonemax36 = $ka3max;        $zonetip36 = $kuna3;
-		$zonename37 = $ka4val;     	  $zonemax37 = $ka4max;        $zonetip37 = $kuna4;
-		$zonename38 = $ka5val;     	  $zonemax38 = $ka5max;        $zonetip38 = $kuna5;
-		$zonename39 = $ka6val;     	  $zonemax39 = $ka6max;        $zonetip39 = $kuna6;
-		$zonename40 = $ka7val;     	  $zonemax40 = $ka7max;        $zonetip40 = $kuna7;
-		$zonename41 = $ka8val;     	  $zonemax41 = $ka8max;        $zonetip41 = $kuna8;
-		$zonename42 = $ka9val;     	  $zonemax42 = $ka9max;        $zonetip42 = $kuna9;
-		$zonename43 = $ka1aval;    	  $zonemax43 = $ka1amax;       $zonetip43 = $kuna1a;
-		$zonename44 = $ka1bval;    	  $zonemax44 = $ka1bmax;       $zonetip44 = $kuna1b;
-		$zonename45 = $pop1val;    	  $zonemax45 = $pop1max;       $zonetip45 = $popr1;
-		$zonename46 = $pop2val;    	  $zonemax46 = $pop2max;       $zonetip46 = $popr2;
-		$zonename47 = $pop3val;    	  $zonemax47 = $pop3max;       $zonetip47 = $popr3;
-		$zonename48 = $pop4val;    	  $zonemax48 = $pop4max;       $zonetip48 = $popr4;
-		$zonename49 = $pop5val;    	  $zonemax49 = $pop5max;       $zonetip49 = $popr5;
-		$zonename50 = $popsohval;  	  $zonemax50 = $popsohmax;     $zonetip50 = $popshate;
-		$zonename51 = $ykeshaval;  	  $zonemax51 = $ykeshamax;     $zonetip51 = $fabykesha;
-		$zonename52 = $chaosd1val; 	  $zonemax52 = $chaosd1max;    $zonetip52 = $chaosdsc1;
-		$zonename53 = $chaosd2val; 	  $zonemax53 = $chaosd2max;    $zonetip53 = $chaosdsc2;
-		$zonename54 = $chaosd3val; 	  $zonemax54 = $chaosd3max;    $zonetip54 = $chaosdsc3;
-		$zonename55 = $chaosd4val; 	  $zonemax55 = $chaosd4max;    $zonetip55 = $chaosdsc4;
-		$zonename56 = $chaosd5val; 	  $zonemax56 = $chaosd5max;    $zonetip56 = $chaosdsc5;
-		$zonename57 = $chaosd6val; 	  $zonemax57 = $chaosd6max;    $zonetip57 = $chaosdsc6;
-		$zonename58 = $chaosd7val; 	  $zonemax58 = $chaosd7max;    $zonetip58 = $chaosdsc7;
-		$zonename59 = $chaosd8val; 	  $zonemax59 = $chaosd8max;    $zonetip59 = $chaosdsc8;
-		$zonename60 = $chaosd9val; 	  $zonemax60 = $chaosd9max;    $zonetip60 = $chaosdsc9;
-		$zonename61 = $mischfval; 	  $zonemax61 = $mischfmax;     $zonetip61 = $castlemisc;
-		$zonename62 = $fkdval;  	  $zonemax62 = $fkdmax;   	   $zonetip62 = $fabledkd;
-		$zonename63 = $ftsval;  	  $zonemax63 = $ftsmax;   	   $zonetip63 = $fabledts;
-		$zonename64 = $ftrzval;  	  $zonemax64 = $ftrzmax;   	   $zonetip64 = $fabledtrz;
-		$zonename65 = $bl1val;  	  $zonemax65 = $bl1max;   	   $zonetip65 = $bl1t;
-		$zonename66 = $bl2val;  	  $zonemax66 = $bl2max;   	   $zonetip66 = $bl2t;
-		$zonename67 = $bl3val;  	  $zonemax67 = $bl3max;   	   $zonetip67 = $bl3t;
-		$zonename68 = $bl4val;  	  $zonemax68 = $bl4max;   	   $zonetip68 = $bl4t;
-		$zonename69 = $bl5val;  	  $zonemax69 = $bl5max;   	   $zonetip69 = $bl5t;
-		$zonename70 = $bl6val;  	  $zonemax70 = $bl6max;   	   $zonetip70 = $bl6t;
-		$zonename71 = $bl7val;  	  $zonemax71 = $bl7max;   	   $zonetip71 = $bl7t;
-		$zonename72 = $bl8val;  	  $zonemax72 = $bl8max;   	   $zonetip72 = $bl8t;
-		$zonename73 = $bl9val;  	  $zonemax73 = $bl9max;   	   $zonetip73 = $bl9t;
-		$zonename74 = $ros1val;  	  $zonemax74 = $ros1max;   	   $zonetip74 = $ros1t;
-		$zonename75 = $ros2val;  	  $zonemax75 = $ros2max;   	   $zonetip75 = $ros2t;
-		$zonename76 = $ros3val;  	  $zonemax76 = $ros3max;   	   $zonetip76 = $ros3t;
-		$zonename77 = $ros4val;  	  $zonemax77 = $ros4max;   	   $zonetip77 = $ros4t;
+		$zonename33 = $ffdval;        $zonemax33 = $ffdmax;        $zonetip33 = $tffd;
+		$zonename34 = $ka1val;        $zonemax34 = $ka1max;        $zonetip34 = $kuna1;
+		$zonename35 = $ka2val;        $zonemax35 = $ka2max;        $zonetip35 = $kuna2;
+		$zonename36 = $ka3val;        $zonemax36 = $ka3max;        $zonetip36 = $kuna3;
+		$zonename37 = $ka4val;        $zonemax37 = $ka4max;        $zonetip37 = $kuna4;
+		$zonename38 = $ka5val;        $zonemax38 = $ka5max;        $zonetip38 = $kuna5;
+		$zonename39 = $ka6val;        $zonemax39 = $ka6max;        $zonetip39 = $kuna6;
+		$zonename40 = $ka7val;        $zonemax40 = $ka7max;        $zonetip40 = $kuna7;
+		$zonename41 = $ka8val;        $zonemax41 = $ka8max;        $zonetip41 = $kuna8;
+		$zonename42 = $ka9val;        $zonemax42 = $ka9max;        $zonetip42 = $kuna9;
+		$zonename43 = $ka1aval;       $zonemax43 = $ka1amax;       $zonetip43 = $kuna1a;
+		$zonename44 = $ka1bval;       $zonemax44 = $ka1bmax;       $zonetip44 = $kuna1b;
+		$zonename45 = $pop1val;       $zonemax45 = $pop1max;       $zonetip45 = $popr1;
+		$zonename46 = $pop2val;       $zonemax46 = $pop2max;       $zonetip46 = $popr2;
+		$zonename47 = $pop3val;       $zonemax47 = $pop3max;       $zonetip47 = $popr3;
+		$zonename48 = $pop4val;       $zonemax48 = $pop4max;       $zonetip48 = $popr4;
+		$zonename49 = $pop5val;       $zonemax49 = $pop5max;       $zonetip49 = $popr5;
+		$zonename50 = $popsohval;     $zonemax50 = $popsohmax;     $zonetip50 = $popshate;
+		$zonename51 = $ykeshaval;     $zonemax51 = $ykeshamax;     $zonetip51 = $fabykesha;
+		$zonename52 = $chaosd1val;    $zonemax52 = $chaosd1max;    $zonetip52 = $chaosdsc1;
+		$zonename53 = $chaosd2val;    $zonemax53 = $chaosd2max;    $zonetip53 = $chaosdsc2;
+		$zonename54 = $chaosd3val;    $zonemax54 = $chaosd3max;    $zonetip54 = $chaosdsc3;
+		$zonename55 = $chaosd4val;    $zonemax55 = $chaosd4max;    $zonetip55 = $chaosdsc4;
+		$zonename56 = $chaosd5val;    $zonemax56 = $chaosd5max;    $zonetip56 = $chaosdsc5;
+		$zonename57 = $chaosd6val;    $zonemax57 = $chaosd6max;    $zonetip57 = $chaosdsc6;
+		$zonename58 = $chaosd7val;    $zonemax58 = $chaosd7max;    $zonetip58 = $chaosdsc7;
+		$zonename59 = $chaosd8val;    $zonemax59 = $chaosd8max;    $zonetip59 = $chaosdsc8;
+		$zonename60 = $chaosd9val;    $zonemax60 = $chaosd9max;    $zonetip60 = $chaosdsc9;
+		$zonename61 = $mischfval;     $zonemax61 = $mischfmax;     $zonetip61 = $castlemisc;
+		$zonename62 = $fkdval;        $zonemax62 = $fkdmax;   	   $zonetip62 = $fabledkd;
+		$zonename63 = $ftsval;        $zonemax63 = $ftsmax;   	   $zonetip63 = $fabledts;
+		$zonename64 = $ftrzval;       $zonemax64 = $ftrzmax;   	   $zonetip64 = $fabledtrz;
+		$zonename65 = $bl1val;        $zonemax65 = $bl1max;   	   $zonetip65 = $bl1t;
+		$zonename66 = $bl2val;        $zonemax66 = $bl2max;   	   $zonetip66 = $bl2t;
+		$zonename67 = $bl3val;        $zonemax67 = $bl3max;   	   $zonetip67 = $bl3t;
+		$zonename68 = $bl4val;        $zonemax68 = $bl4max;   	   $zonetip68 = $bl4t;
+		$zonename69 = $bl5val;        $zonemax69 = $bl5max;   	   $zonetip69 = $bl5t;
+		$zonename70 = $bl6val;        $zonemax70 = $bl6max;   	   $zonetip70 = $bl6t;
+		$zonename71 = $bl7val;        $zonemax71 = $bl7max;   	   $zonetip71 = $bl7t;
+		$zonename72 = $bl8val;        $zonemax72 = $bl8max;   	   $zonetip72 = $bl8t;
+		$zonename73 = $bl9val;        $zonemax73 = $bl9max;   	   $zonetip73 = $bl9t;
+		$zonename74 = $ros1val;       $zonemax74 = $ros1max;   	   $zonetip74 = $ros1t;
+		$zonename75 = $ros2val;       $zonemax75 = $ros2max;   	   $zonetip75 = $ros2t;
+		$zonename76 = $ros3val;       $zonemax76 = $ros3max;   	   $zonetip76 = $ros3t;
+		$zonename77 = $ros4val;       $zonemax77 = $ros4max;   	   $zonetip77 = $ros4t;
 		$out = ''; 
 			for($i=1;$i<=77;$i++) {
 			$check = ${"zone".$i};
